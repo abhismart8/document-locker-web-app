@@ -13,11 +13,13 @@ class UploadRepository
             'file' => 'required|mimes:pdf|max:20480',
         ]);
   
-        $fileName = $request->file->getClientOriginalName();  
-   
-        $request->file->move(public_path('uploads'), time().'.'.$request->file->extension());
+        $fileName = $request->file->getClientOriginalName();
 
-        $path = 'uploads/'.time().'.'.$request->file->extension();
+        $pathFileName = time().'.'.$request->file->extension();
+   
+        $request->file->move(public_path('uploads'), $pathFileName);
+
+        $path = 'uploads/'.$pathFileName;
 
         // uploading file in db
         $upload = Upload::create([
