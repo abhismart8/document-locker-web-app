@@ -5,6 +5,7 @@ Its a web app to store all your documents in a locker.
 ## INSTALLATION
 
 To install & run this project, do the following:-
+
     - Install composer
 
     - Clone the repository using "git clone https://github.com/abhismart8/document-locker-web-app.git"
@@ -16,3 +17,6 @@ To install & run this project, do the following:-
     - Create a database and put the database details in .env file
     
     - Now, run "php artisan serve" command to run the application
+
+## APPLICATION URL
+http://document-locker-web-app.herokuapp.com/
