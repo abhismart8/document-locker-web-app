@@ -15,9 +15,9 @@ class UploadRepository
   
         $fileName = $request->file->getClientOriginalName();  
    
-        $request->file->move(public_path('uploads'), $fileName);
+        $request->file->move(public_path('uploads'), time().'.'.$request->file->extension());
 
-        $path = 'uploads/'.$fileName;
+        $path = 'uploads/'.time().'.'.$request->file->extension();
 
         // uploading file in db
         $upload = Upload::create([
